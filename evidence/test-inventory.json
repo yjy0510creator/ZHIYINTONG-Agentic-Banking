@@ -1,0 +1,452 @@
+[
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_01_green_bills",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_02_yellow_requires_confirmation",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_03_red_requires_mfa",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_04_normal_red_threshold[100]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_04_normal_red_threshold[50000]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_05_large_red_hitl",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_06_maker_cannot_self_approve",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_07_checker_requires_supervisor",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_08_rejection_is_terminal",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_09_sandbox_failure_blocks",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_10_repeated_key_exact_result",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_11_key_conflict",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_12_concurrent_replay",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_13_process_restart_persistence",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_14_hash_chain_and_append_only",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_15_real_sse_review_and_audit",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_16_history_after_new_client",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_17_six_original_scenarios[travel]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_17_six_original_scenarios[transfer]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_17_six_original_scenarios[bills]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_17_six_original_scenarios[wealth]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_17_six_original_scenarios[card]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_17_six_original_scenarios[subscriptions]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_18_production_denies_development_identity",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_supervisor_success_and_binding",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_identity_spoof_and_legacy_mfa_flag",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_dag_and_plan_tamper",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_audit_failure_rolls_back_ledger",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_health_openapi",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_reject_invalid_money[NaN]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_reject_invalid_money[Infinity]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_reject_invalid_money[-1]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_reject_invalid_money[0.001]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_dag_validation_at_execution[cycle]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_dag_validation_at_execution[missing_dependency]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_unknown_recipient_rejected",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_audit_redaction_and_tamper_detection",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_execution_rechecks_current_balance",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_sse_resume_review_event",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_mcp_tools_remain_available",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_banking_v3",
+    "name": "test_original_travel_authorization_chain",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_01_without_checker",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_02_maker_self_review",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_03_checker_rejection",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_04_amount_changed_after_approval[http_extra_amount]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_04_amount_changed_after_approval[isolated_storage_tamper]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_05_direct_http_and_spoofed_identity",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_06_old_approval_replay",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_07_concurrent_execution",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_08_mfa_incomplete",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_09_independent_authenticated_role_required",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_10_policy_version_change_invalidates_approval",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_11_approval_digest_binds_required_fields[amount_cents-5000200]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_11_approval_digest_binds_required_fields[recipient-another-recipient]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_11_approval_digest_binds_required_fields[workflow_id-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_final_security_audit",
+    "name": "test_11_approval_digest_binds_required_fields[policy_version-new-policy]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_explanation_trace_and_replay_no_funds",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_digital_twin_exact_calculation_and_no_mutation",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_fraud_rules_binding_and_no_authorization",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_health_insufficient_data_and_cashflow",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_intelligence_validation[/api/financial/digital-twin/simulate-body0]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_intelligence_validation[/api/financial/digital-twin/simulate-body1]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_intelligence_validation[/api/financial/digital-twin/simulate-body2]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_intelligence_validation[/api/financial/health-report-body3]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_intelligence_validation[/api/security/fraud-assess-body4]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_intelligence_validation[/api/financial/health-report-body5]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_persist_trace_scenarios_and_decisions_restart",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_intelligence",
+    "name": "test_technical_identifiers_are_not_account_numbers",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_normal_authorization_snapshot",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_policy_change_at_each_stage[created]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_policy_change_at_each_stage[maker]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_policy_change_at_each_stage[mfa]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_policy_change_at_each_stage[checker]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_fingerprint_change_same_version",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_old_approval_digest",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_old_idempotency_key_after_policy_change",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_concurrent_activation_wins_lock",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_stale_cannot_restore_after_version_revert",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_maker_self_approval",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_checker_different_transaction",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_audit_failure_rolls_back_every_effect[execution_completed]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_audit_failure_rolls_back_every_effect[api_request_completed]",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_sandbox_mismatch",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_parallel_execution_once",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_expired_mfa",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_snapshot_append_only_and_client_override",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_read_only_request_does_not_activate_policy",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_policy_binding_v31",
+    "name": "test_dormant_old_worker_cannot_reactivate_old_policy",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_security_acceptance",
+    "name": "test_financial_security_acceptance",
+    "result": "PASS"
+  },
+  {
+    "file": "tests.test_security_acceptance",
+    "name": "test_default_balance_must_not_bypass_reserves",
+    "result": "PASS"
+  }
+]

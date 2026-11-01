@@ -1,0 +1,10 @@
+{
+  "file_count": 102,
+  "zip_bytes": 5847021,
+  "crc_test": "PASS",
+  "actual_env_secret_matches": 0,
+  "key_token_pattern_matches": 0,
+  "excluded_database_env_runtime_caches": true,
+  "test_fixture_passwords": "synthetic test-only constants retained; not deployment credentials",
+  "fresh_dependency_download_install": "NOT RUN; source recheck uses already installed verified runtime"
+}

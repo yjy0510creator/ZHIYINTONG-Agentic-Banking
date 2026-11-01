@@ -1,0 +1,47 @@
+{
+  "verdict": "PASS",
+  "batches": {
+    "43": {
+      "total": 43,
+      "passed": 43,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "55": {
+      "total": 55,
+      "passed": 55,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "70": {
+      "total": 70,
+      "passed": 70,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "full": {
+      "total": 90,
+      "passed": 90,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "original70": {
+      "total": 70,
+      "passed": 70,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "new": {
+      "total": 20,
+      "passed": 20,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  }
+}

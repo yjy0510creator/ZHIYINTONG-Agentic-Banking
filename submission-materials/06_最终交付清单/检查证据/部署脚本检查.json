@@ -1,0 +1,10 @@
+{
+  "configure_demo": "PASS",
+  "passwords": "3 distinct local random values, all >=16 chars; not disclosed",
+  "database_path": "source-extracted/backend/data/demo.db",
+  "initialize_database": "PASS, empty audit tip all zeros",
+  "pip_check": "No broken requirements found.",
+  "fresh_dependency_download_install": "NOT RUN; verified existing project runtime used",
+  "core_source_hash_matches": 54,
+  "core_source_unchanged": true
+}

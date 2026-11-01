@@ -1,0 +1,9 @@
+{
+  "name": "zhiyintong-submission",
+  "version": "3.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix frontend run build",
+    "dev": "npm --prefix frontend run dev"
+  }
+}

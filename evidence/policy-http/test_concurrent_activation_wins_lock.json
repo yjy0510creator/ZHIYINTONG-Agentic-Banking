@@ -1,0 +1,1689 @@
+{
+  "test": "test_concurrent_activation_wins_lock",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/transactions",
+      "request": {
+        "action": "transfer.simulate",
+        "amount": "50001",
+        "recipient": "demo-recipient",
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17"
+      },
+      "principal": "maker_or_explicit_headers",
+      "status": 201,
+      "response": {
+        "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+        "actor_id": "dev-maker",
+        "task_id": null,
+        "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+        "intent": "Independent simulation request",
+        "plan_confirmed": false,
+        "nodes": [
+          {
+            "task_id": "N01",
+            "dependencies": []
+          },
+          {
+            "task_id": "N02",
+            "dependencies": [
+              "N01"
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "N01",
+            "target": "N02"
+          }
+        ],
+        "created_at": "2026-11-01T08:17:02.649034Z",
+        "action": "transfer.simulate",
+        "amount_cents": 5000100,
+        "recipient": "demo-recipient",
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17",
+        "permission_level": "RED",
+        "state": "SANDBOX_PASSED",
+        "mfa_verified": false,
+        "maker_confirmed": false,
+        "checker_id": null,
+        "approved_hash": null,
+        "risk_flags": [],
+        "policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+        "policy_generation": 1,
+        "policy_version": "trust-engine-3.0",
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "sandbox": {
+          "sandbox_status": "passed",
+          "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+          "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+          "validation_results": [
+            {
+              "check": "unique_nodes",
+              "passed": true
+            },
+            {
+              "check": "dependencies_exist",
+              "passed": true
+            },
+            {
+              "check": "acyclic",
+              "passed": true
+            },
+            {
+              "check": "action_allowlist",
+              "passed": true
+            },
+            {
+              "check": "recipient_allowlist",
+              "passed": true
+            },
+            {
+              "check": "amount",
+              "passed": true
+            },
+            {
+              "check": "balance_and_reserves",
+              "passed": true
+            },
+            {
+              "check": "permission",
+              "passed": true
+            },
+            {
+              "check": "risk_rules",
+              "passed": true
+            },
+            {
+              "check": "bound_plan",
+              "passed": true
+            }
+          ],
+          "risk_level": "HIGH",
+          "validated_at": "2026-11-01T08:17:02.649596Z"
+        },
+        "maker_id": "dev-maker",
+        "transaction_amount": 5000100,
+        "action_type": "transfer.simulate",
+        "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+        "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+        "sandbox_result_hash": "31cc8f83802d50e254f4f1554196c463f25c70a564adc5874d984d67acd3aaf5",
+        "sandbox_valid": true,
+        "authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/maker-confirm",
+      "request": {
+        "confirmed": true
+      },
+      "principal": "maker_or_explicit_headers",
+      "status": 200,
+      "response": {
+        "action": "transfer.simulate",
+        "action_type": "transfer.simulate",
+        "actor_id": "dev-maker",
+        "amount_cents": 5000100,
+        "approved_hash": null,
+        "authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "checker_id": null,
+        "created_at": "2026-11-01T08:17:02.649034Z",
+        "edges": [
+          {
+            "source": "N01",
+            "target": "N02"
+          }
+        ],
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17",
+        "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+        "intent": "Independent simulation request",
+        "maker_confirmed": true,
+        "maker_id": "dev-maker",
+        "mfa_verified": false,
+        "nodes": [
+          {
+            "dependencies": [],
+            "task_id": "N01"
+          },
+          {
+            "dependencies": [
+              "N01"
+            ],
+            "task_id": "N02"
+          }
+        ],
+        "permission_level": "RED",
+        "plan_confirmed": false,
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+        "policy_generation": 1,
+        "policy_version": "trust-engine-3.0",
+        "recipient": "demo-recipient",
+        "risk_flags": [],
+        "sandbox": {
+          "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+          "risk_level": "HIGH",
+          "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+          "sandbox_status": "passed",
+          "validated_at": "2026-11-01T08:17:02.649596Z",
+          "validation_results": [
+            {
+              "check": "unique_nodes",
+              "passed": true
+            },
+            {
+              "check": "dependencies_exist",
+              "passed": true
+            },
+            {
+              "check": "acyclic",
+              "passed": true
+            },
+            {
+              "check": "action_allowlist",
+              "passed": true
+            },
+            {
+              "check": "recipient_allowlist",
+              "passed": true
+            },
+            {
+              "check": "amount",
+              "passed": true
+            },
+            {
+              "check": "balance_and_reserves",
+              "passed": true
+            },
+            {
+              "check": "permission",
+              "passed": true
+            },
+            {
+              "check": "risk_rules",
+              "passed": true
+            },
+            {
+              "check": "bound_plan",
+              "passed": true
+            }
+          ]
+        },
+        "sandbox_result_hash": "31cc8f83802d50e254f4f1554196c463f25c70a564adc5874d984d67acd3aaf5",
+        "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+        "sandbox_valid": true,
+        "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+        "state": "AWAITING_MAKER_MFA",
+        "task_id": null,
+        "transaction_amount": 5000100,
+        "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+        "maker_confirmed_by": "dev-maker",
+        "maker_confirmed_at": "2026-11-01T08:17:02.699635Z",
+        "maker_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/mfa/verify",
+      "request": {
+        "consent": true,
+        "method": "simulated_face"
+      },
+      "principal": "maker_or_explicit_headers",
+      "status": 200,
+      "response": {
+        "action": "transfer.simulate",
+        "action_type": "transfer.simulate",
+        "actor_id": "dev-maker",
+        "amount_cents": 5000100,
+        "approved_hash": null,
+        "authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "checker_id": null,
+        "created_at": "2026-11-01T08:17:02.649034Z",
+        "edges": [
+          {
+            "source": "N01",
+            "target": "N02"
+          }
+        ],
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17",
+        "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+        "intent": "Independent simulation request",
+        "maker_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "maker_confirmed": true,
+        "maker_confirmed_at": "2026-11-01T08:17:02.699635Z",
+        "maker_confirmed_by": "dev-maker",
+        "maker_id": "dev-maker",
+        "mfa_verified": true,
+        "nodes": [
+          {
+            "dependencies": [],
+            "task_id": "N01"
+          },
+          {
+            "dependencies": [
+              "N01"
+            ],
+            "task_id": "N02"
+          }
+        ],
+        "permission_level": "RED",
+        "plan_confirmed": false,
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+        "policy_generation": 1,
+        "policy_version": "trust-engine-3.0",
+        "recipient": "demo-recipient",
+        "risk_flags": [],
+        "sandbox": {
+          "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+          "risk_level": "HIGH",
+          "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+          "sandbox_status": "passed",
+          "validated_at": "2026-11-01T08:17:02.649596Z",
+          "validation_results": [
+            {
+              "check": "unique_nodes",
+              "passed": true
+            },
+            {
+              "check": "dependencies_exist",
+              "passed": true
+            },
+            {
+              "check": "acyclic",
+              "passed": true
+            },
+            {
+              "check": "action_allowlist",
+              "passed": true
+            },
+            {
+              "check": "recipient_allowlist",
+              "passed": true
+            },
+            {
+              "check": "amount",
+              "passed": true
+            },
+            {
+              "check": "balance_and_reserves",
+              "passed": true
+            },
+            {
+              "check": "permission",
+              "passed": true
+            },
+            {
+              "check": "risk_rules",
+              "passed": true
+            },
+            {
+              "check": "bound_plan",
+              "passed": true
+            }
+          ]
+        },
+        "sandbox_result_hash": "31cc8f83802d50e254f4f1554196c463f25c70a564adc5874d984d67acd3aaf5",
+        "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+        "sandbox_valid": true,
+        "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+        "state": "PENDING_HUMAN_REVIEW",
+        "task_id": null,
+        "transaction_amount": 5000100,
+        "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+        "mfa_verified_by": "dev-maker",
+        "mfa_verified_at": 1793521022.7476826,
+        "mfa_expires_at": 1793521322.7476828,
+        "mfa_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "status": "PENDING_HUMAN_REVIEW",
+        "simulated_only": true
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/submit-review",
+      "request": {},
+      "principal": "maker_or_explicit_headers",
+      "status": 200,
+      "response": {
+        "action": "transfer.simulate",
+        "action_type": "transfer.simulate",
+        "actor_id": "dev-maker",
+        "amount_cents": 5000100,
+        "approved_hash": null,
+        "authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "checker_id": null,
+        "created_at": "2026-11-01T08:17:02.649034Z",
+        "edges": [
+          {
+            "source": "N01",
+            "target": "N02"
+          }
+        ],
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17",
+        "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+        "intent": "Independent simulation request",
+        "maker_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "maker_confirmed": true,
+        "maker_confirmed_at": "2026-11-01T08:17:02.699635Z",
+        "maker_confirmed_by": "dev-maker",
+        "maker_id": "dev-maker",
+        "mfa_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "mfa_expires_at": 1793521322.7476828,
+        "mfa_verified": true,
+        "mfa_verified_at": 1793521022.7476826,
+        "mfa_verified_by": "dev-maker",
+        "nodes": [
+          {
+            "dependencies": [],
+            "task_id": "N01"
+          },
+          {
+            "dependencies": [
+              "N01"
+            ],
+            "task_id": "N02"
+          }
+        ],
+        "permission_level": "RED",
+        "plan_confirmed": false,
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+        "policy_generation": 1,
+        "policy_version": "trust-engine-3.0",
+        "recipient": "demo-recipient",
+        "risk_flags": [],
+        "sandbox": {
+          "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+          "risk_level": "HIGH",
+          "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+          "sandbox_status": "passed",
+          "validated_at": "2026-11-01T08:17:02.649596Z",
+          "validation_results": [
+            {
+              "check": "unique_nodes",
+              "passed": true
+            },
+            {
+              "check": "dependencies_exist",
+              "passed": true
+            },
+            {
+              "check": "acyclic",
+              "passed": true
+            },
+            {
+              "check": "action_allowlist",
+              "passed": true
+            },
+            {
+              "check": "recipient_allowlist",
+              "passed": true
+            },
+            {
+              "check": "amount",
+              "passed": true
+            },
+            {
+              "check": "balance_and_reserves",
+              "passed": true
+            },
+            {
+              "check": "permission",
+              "passed": true
+            },
+            {
+              "check": "risk_rules",
+              "passed": true
+            },
+            {
+              "check": "bound_plan",
+              "passed": true
+            }
+          ]
+        },
+        "sandbox_result_hash": "31cc8f83802d50e254f4f1554196c463f25c70a564adc5874d984d67acd3aaf5",
+        "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+        "sandbox_valid": true,
+        "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+        "state": "AWAITING_CHECKER",
+        "task_id": null,
+        "transaction_amount": 5000100,
+        "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/human-review",
+      "request": {
+        "decision": "APPROVE",
+        "reason": "Independent final security audit",
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca"
+      },
+      "principal": "checker",
+      "status": 200,
+      "response": {
+        "action": "transfer.simulate",
+        "action_type": "transfer.simulate",
+        "actor_id": "dev-maker",
+        "amount_cents": 5000100,
+        "approved_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "checker_id": "dev-checker",
+        "created_at": "2026-11-01T08:17:02.649034Z",
+        "edges": [
+          {
+            "source": "N01",
+            "target": "N02"
+          }
+        ],
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17",
+        "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+        "intent": "Independent simulation request",
+        "maker_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "maker_confirmed": true,
+        "maker_confirmed_at": "2026-11-01T08:17:02.699635Z",
+        "maker_confirmed_by": "dev-maker",
+        "maker_id": "dev-maker",
+        "mfa_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "mfa_expires_at": 1793521322.7476828,
+        "mfa_verified": true,
+        "mfa_verified_at": 1793521022.7476826,
+        "mfa_verified_by": "dev-maker",
+        "nodes": [
+          {
+            "dependencies": [],
+            "task_id": "N01"
+          },
+          {
+            "dependencies": [
+              "N01"
+            ],
+            "task_id": "N02"
+          }
+        ],
+        "permission_level": "RED",
+        "plan_confirmed": false,
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+        "policy_generation": 1,
+        "policy_version": "trust-engine-3.0",
+        "recipient": "demo-recipient",
+        "risk_flags": [],
+        "sandbox": {
+          "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+          "risk_level": "HIGH",
+          "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+          "sandbox_status": "passed",
+          "validated_at": "2026-11-01T08:17:02.649596Z",
+          "validation_results": [
+            {
+              "check": "unique_nodes",
+              "passed": true
+            },
+            {
+              "check": "dependencies_exist",
+              "passed": true
+            },
+            {
+              "check": "acyclic",
+              "passed": true
+            },
+            {
+              "check": "action_allowlist",
+              "passed": true
+            },
+            {
+              "check": "recipient_allowlist",
+              "passed": true
+            },
+            {
+              "check": "amount",
+              "passed": true
+            },
+            {
+              "check": "balance_and_reserves",
+              "passed": true
+            },
+            {
+              "check": "permission",
+              "passed": true
+            },
+            {
+              "check": "risk_rules",
+              "passed": true
+            },
+            {
+              "check": "bound_plan",
+              "passed": true
+            }
+          ]
+        },
+        "sandbox_result_hash": "31cc8f83802d50e254f4f1554196c463f25c70a564adc5874d984d67acd3aaf5",
+        "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+        "sandbox_valid": true,
+        "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+        "state": "APPROVED",
+        "task_id": null,
+        "transaction_amount": 5000100,
+        "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+        "review_reason": "Independent final security audit",
+        "reviewed_at": "2026-11-01T08:17:02.845658Z",
+        "checker_role": "supervisor",
+        "approved_authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "approved_policy_version": "trust-engine-3.0",
+        "approved_policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+        "approved_plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "approved_at": "2026-11-01T08:17:02.845671Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/execute",
+      "request": {
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17"
+      },
+      "principal": "maker_or_explicit_headers",
+      "status": 409,
+      "response": {
+        "detail": "POLICY_STALE: create a new workflow; previous authorizations are invalid"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/execute",
+      "request": {
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17"
+      },
+      "principal": "maker_or_explicit_headers",
+      "status": 409,
+      "response": {
+        "detail": "POLICY_STALE: create a new workflow; previous authorizations are invalid"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051",
+      "request": null,
+      "principal": "maker_or_explicit_headers",
+      "status": 200,
+      "response": {
+        "action": "transfer.simulate",
+        "action_type": "transfer.simulate",
+        "actor_id": "dev-maker",
+        "amount_cents": 5000100,
+        "approved_at": null,
+        "approved_authorization_digest": null,
+        "approved_hash": null,
+        "approved_plan_hash": null,
+        "approved_policy_fingerprint": null,
+        "approved_policy_version": null,
+        "authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+        "checker_id": null,
+        "checker_role": "supervisor",
+        "created_at": "2026-11-01T08:17:02.649034Z",
+        "edges": [
+          {
+            "source": "N01",
+            "target": "N02"
+          }
+        ],
+        "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17",
+        "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+        "intent": "Independent simulation request",
+        "maker_authorization_digest": null,
+        "maker_confirmed": false,
+        "maker_confirmed_at": "2026-11-01T08:17:02.699635Z",
+        "maker_confirmed_by": "dev-maker",
+        "maker_id": "dev-maker",
+        "mfa_authorization_digest": null,
+        "mfa_expires_at": 1793521322.7476828,
+        "mfa_verified": false,
+        "mfa_verified_at": 1793521022.7476826,
+        "mfa_verified_by": "dev-maker",
+        "nodes": [
+          {
+            "dependencies": [],
+            "task_id": "N01"
+          },
+          {
+            "dependencies": [
+              "N01"
+            ],
+            "task_id": "N02"
+          }
+        ],
+        "permission_level": "RED",
+        "plan_confirmed": false,
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+        "policy_generation": 1,
+        "policy_stale_at": "2026-11-01T08:17:04.993678Z",
+        "policy_version": "trust-engine-3.0",
+        "recipient": "demo-recipient",
+        "review_reason": "Independent final security audit",
+        "reviewed_at": "2026-11-01T08:17:02.845658Z",
+        "risk_flags": [],
+        "sandbox": {
+          "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+          "risk_level": "HIGH",
+          "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+          "sandbox_status": "passed",
+          "validated_at": "2026-11-01T08:17:02.649596Z",
+          "validation_results": [
+            {
+              "check": "unique_nodes",
+              "passed": true
+            },
+            {
+              "check": "dependencies_exist",
+              "passed": true
+            },
+            {
+              "check": "acyclic",
+              "passed": true
+            },
+            {
+              "check": "action_allowlist",
+              "passed": true
+            },
+            {
+              "check": "recipient_allowlist",
+              "passed": true
+            },
+            {
+              "check": "amount",
+              "passed": true
+            },
+            {
+              "check": "balance_and_reserves",
+              "passed": true
+            },
+            {
+              "check": "permission",
+              "passed": true
+            },
+            {
+              "check": "risk_rules",
+              "passed": true
+            },
+            {
+              "check": "bound_plan",
+              "passed": true
+            }
+          ]
+        },
+        "sandbox_result_hash": "31cc8f83802d50e254f4f1554196c463f25c70a564adc5874d984d67acd3aaf5",
+        "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+        "sandbox_valid": false,
+        "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+        "state": "POLICY_STALE",
+        "task_id": null,
+        "transaction_amount": 5000100,
+        "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/human-review",
+      "request": {
+        "decision": "APPROVE",
+        "reason": "Independent final security audit",
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca"
+      },
+      "principal": "checker",
+      "status": 409,
+      "response": {
+        "detail": "POLICY_STALE: create a new workflow; previous authorizations are invalid"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/maker-confirm",
+      "request": {
+        "confirmed": true
+      },
+      "principal": "maker_or_explicit_headers",
+      "status": 409,
+      "response": {
+        "detail": "POLICY_STALE: create a new workflow; previous authorizations are invalid"
+      }
+    }
+  ],
+  "notes": [
+    {
+      "before_balance_cents": 200000000,
+      "after_balance_cents": 200000000,
+      "state": "POLICY_STALE",
+      "expected_balance_delta": 0
+    }
+  ],
+  "audit_events": [
+    {
+      "sequence": 1,
+      "event_id": "915d2769613c40fbb4843ba9e7bcf371",
+      "timestamp_utc": "2026-11-01T08:17:01.964315Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "development_login",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "metadata_json": "{\"simulation_only\":true}",
+      "duration_ms": 0.0,
+      "event_hash": "6d9c9ec9b4781a66beeec1c43bb76c43cf93cf85f6c65068afdc995498ec607c"
+    },
+    {
+      "sequence": 2,
+      "event_id": "362ecf72851247bd852fa9ef82c9db16",
+      "timestamp_utc": "2026-11-01T08:17:02.361491Z",
+      "actor_id": "dev-checker",
+      "actor_role": "supervisor",
+      "session_id": "cee259766ebfb2a372ecfae5bbe19cb2",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "development_login",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "6d9c9ec9b4781a66beeec1c43bb76c43cf93cf85f6c65068afdc995498ec607c",
+      "metadata_json": "{\"simulation_only\":true}",
+      "duration_ms": 0.0,
+      "event_hash": "3da936344fb8df63c08e0ea05b4e9e23c787eac51871a26b7812445f9149cc1f"
+    },
+    {
+      "sequence": 3,
+      "event_id": "b0e474c164d44aec894fa23651b829ae",
+      "timestamp_utc": "2026-11-01T08:17:02.564264Z",
+      "actor_id": "dev-customer2",
+      "actor_role": "customer",
+      "session_id": "3ad36ea2596ea3ae572843bb9eea9e80",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "development_login",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "3da936344fb8df63c08e0ea05b4e9e23c787eac51871a26b7812445f9149cc1f",
+      "metadata_json": "{\"simulation_only\":true}",
+      "duration_ms": 0.0,
+      "event_hash": "df90cca47c485efef855c8daf3b3a3afca974a1110e6798c05321387f6015ebe"
+    },
+    {
+      "sequence": 4,
+      "event_id": "5515f28248e249e99d1c75b929c4af01",
+      "timestamp_utc": "2026-11-01T08:17:02.607061Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "df90cca47c485efef855c8daf3b3a3afca974a1110e6798c05321387f6015ebe",
+      "metadata_json": "{\"path\":\"/api/transactions\"}",
+      "duration_ms": 0.0,
+      "event_hash": "15506144b083107c406e94268524fb2e6c2ab7f4e926ee41b10fb2ce15d1ec88"
+    },
+    {
+      "sequence": 5,
+      "event_id": "5fe5b9660f304a70b56fdf8e2717ee93",
+      "timestamp_utc": "2026-11-01T08:17:02.635379Z",
+      "actor_id": "policy-service",
+      "actor_role": "system",
+      "session_id": "policy-activation",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "policy_activated",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "15506144b083107c406e94268524fb2e6c2ab7f4e926ee41b10fb2ce15d1ec88",
+      "metadata_json": "{\"current\":{\"policy_fingerprint\":\"80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1\",\"policy_generation\":1,\"policy_version\":\"trust-engine-3.0\"},\"previous\":null}",
+      "duration_ms": 0.0,
+      "event_hash": "a40b87e886588a4c9f164074f4d4470299c43811514b8be40fc6849eec0c7cb0"
+    },
+    {
+      "sequence": 6,
+      "event_id": "72beace566a8466e8844c33ca6d5459f",
+      "timestamp_utc": "2026-11-01T08:17:02.648838Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "trust_decision",
+      "intent": null,
+      "permission_level": "RED",
+      "status": "REQUIRE_CONFIRMATION",
+      "reason": "需要用户对本次具体动作进行明确确认。",
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "a40b87e886588a4c9f164074f4d4470299c43811514b8be40fc6849eec0c7cb0",
+      "metadata_json": "{\"action\":\"transfer.simulate\",\"connector\":\"zhiyintong-mock-bank-connector\",\"decision_scope\":\"TRUST_POLICY_ONLY\",\"execution_authorized\":false,\"note\":\"局部策略判断，不代表通过沙箱/双人审批；执行许可仅由 ExecutionGateway 最终判定。\"}",
+      "duration_ms": 0.019099999917671084,
+      "event_hash": "795e50f01d410d0d47e7b088fbfafbb0c065cb3fd38ceda65a3038bf97c93417"
+    },
+    {
+      "sequence": 7,
+      "event_id": "284a641a3ad941cdae3d2a8081be81e1",
+      "timestamp_utc": "2026-11-01T08:17:02.649252Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "trust_decision",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+      "previous_hash": "795e50f01d410d0d47e7b088fbfafbb0c065cb3fd38ceda65a3038bf97c93417",
+      "metadata_json": "{\"decision\":{\"decision\":\"REQUIRE_CONFIRMATION\",\"permission_level\":\"RED\",\"policy_version\":\"trust-engine-3.0\",\"reason\":\"需要用户对本次具体动作进行明确确认。\",\"simulated_only\":true},\"maker_id\":\"dev-maker\",\"state\":\"CREATED\"}",
+      "duration_ms": 0.0,
+      "event_hash": "fcd0d12177fd3a8c601a96675a71314c4e89dd28ae3d2b488730e6b7aa5afb37"
+    },
+    {
+      "sequence": 8,
+      "event_id": "b6aff454bddf4d419121eaeabda2b7a5",
+      "timestamp_utc": "2026-11-01T08:17:02.649500Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "sandbox_started",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+      "previous_hash": "fcd0d12177fd3a8c601a96675a71314c4e89dd28ae3d2b488730e6b7aa5afb37",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"state\":\"CREATED\"}",
+      "duration_ms": 0.0,
+      "event_hash": "f8b90c865cdb1e913f0c3e745481e6f0f528b2f9e04c47675f97b2463fe892c2"
+    },
+    {
+      "sequence": 9,
+      "event_id": "687bde300b8d416b9bce07e967a344e2",
+      "timestamp_utc": "2026-11-01T08:17:02.649760Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "sandbox_completed",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "f8b90c865cdb1e913f0c3e745481e6f0f528b2f9e04c47675f97b2463fe892c2",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"report\":{\"plan_hash\":\"296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca\",\"risk_level\":\"HIGH\",\"sandbox_run_id\":\"1392b70e2ed543ff8a20cc3333655fbe\",\"sandbox_status\":\"passed\",\"validated_at\":\"2026-11-01T08:17:02.649596Z\",\"validation_results\":[{\"check\":\"unique_nodes\",\"passed\":true},{\"check\":\"dependencies_exist\",\"passed\":true},{\"check\":\"acyclic\",\"passed\":true},{\"check\":\"action_allowlist\",\"passed\":true},{\"check\":\"recipient_allowlist\",\"passed\":true},{\"check\":\"amount\",\"passed\":true},{\"check\":\"balance_and_reserves\",\"passed\":true},{\"check\":\"permission\",\"passed\":true},{\"check\":\"risk_rules\",\"passed\":true},{\"check\":\"bound_plan\",\"passed\":true}]},\"state\":\"SANDBOX_PASSED\"}",
+      "duration_ms": 30.958999996073544,
+      "event_hash": "cb6b287a1ab303e337fb75b7ca7c5c29679feabb35f1bb6a527ef3880263367a"
+    },
+    {
+      "sequence": 10,
+      "event_id": "a96b498aae8c4deaa96c0d1279e8ec1f",
+      "timestamp_utc": "2026-11-01T08:17:02.667080Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "cb6b287a1ab303e337fb75b7ca7c5c29679feabb35f1bb6a527ef3880263367a",
+      "metadata_json": "{\"http_status\":201,\"path\":\"/api/transactions\"}",
+      "duration_ms": 63.19590000202879,
+      "event_hash": "885c450a1f58c5318e38012480ac4872c950a9f3cc857f0b07b5d30926980b50"
+    },
+    {
+      "sequence": 11,
+      "event_id": "64435334a7a44c48b6611d5b9ade74d9",
+      "timestamp_utc": "2026-11-01T08:17:02.684988Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "885c450a1f58c5318e38012480ac4872c950a9f3cc857f0b07b5d30926980b50",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/maker-confirm\"}",
+      "duration_ms": 0.0,
+      "event_hash": "423cf3104779aebb4ce1d08afeea231fe744ad03913a2430900fb7efb139a25f"
+    },
+    {
+      "sequence": 12,
+      "event_id": "54dc16952856435586ca5b99ddcc94fd",
+      "timestamp_utc": "2026-11-01T08:17:02.699858Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "maker_confirmed",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "423cf3104779aebb4ce1d08afeea231fe744ad03913a2430900fb7efb139a25f",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"state\":\"AWAITING_MAKER_MFA\"}",
+      "duration_ms": 0.0,
+      "event_hash": "17c33bc169956c2e1cfd002799e1a7c623813d8606feb586be296fd63bb15783"
+    },
+    {
+      "sequence": 13,
+      "event_id": "4f59d4d4cd5644c59cea8f0c97997776",
+      "timestamp_utc": "2026-11-01T08:17:02.700109Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "mfa_required",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "WAITING_APPROVAL",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "17c33bc169956c2e1cfd002799e1a7c623813d8606feb586be296fd63bb15783",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"state\":\"AWAITING_MAKER_MFA\"}",
+      "duration_ms": 0.0,
+      "event_hash": "baabe059b67a2893c1fd81e1756593c564f95dc5d5efb701e596896f9cef0c7e"
+    },
+    {
+      "sequence": 14,
+      "event_id": "6c8461944ea44b17b1746c65bf31a656",
+      "timestamp_utc": "2026-11-01T08:17:02.714812Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "baabe059b67a2893c1fd81e1756593c564f95dc5d5efb701e596896f9cef0c7e",
+      "metadata_json": "{\"http_status\":200,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/maker-confirm\"}",
+      "duration_ms": 32.1745999972336,
+      "event_hash": "59a521c7b11f0c5833474db06a80fabd731839cc4a670839193445387253e2e3"
+    },
+    {
+      "sequence": 15,
+      "event_id": "62e84997b0fd47f7bc646585653c14a7",
+      "timestamp_utc": "2026-11-01T08:17:02.732515Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "59a521c7b11f0c5833474db06a80fabd731839cc4a670839193445387253e2e3",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/mfa/verify\"}",
+      "duration_ms": 0.0,
+      "event_hash": "062b4fc53f9a67d8bfe4d46ce63be1cac03507e938e74fe4d089369cfeacacfe"
+    },
+    {
+      "sequence": 16,
+      "event_id": "da3d4fe00b804a39824ce38c940cf7cd",
+      "timestamp_utc": "2026-11-01T08:17:02.747940Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "mfa_verified",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "062b4fc53f9a67d8bfe4d46ce63be1cac03507e938e74fe4d089369cfeacacfe",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"state\":\"AWAITING_MAKER_MFA\"}",
+      "duration_ms": 2.8686000005109236,
+      "event_hash": "cb35590ea57ef9e3882340ef89f434736d4da83ab26ed2225de260eb84979061"
+    },
+    {
+      "sequence": 17,
+      "event_id": "458be3129ec94603be76c008dd50b6db",
+      "timestamp_utc": "2026-11-01T08:17:02.748296Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "hitl_required",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "WAITING_APPROVAL",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "cb35590ea57ef9e3882340ef89f434736d4da83ab26ed2225de260eb84979061",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"state\":\"PENDING_HUMAN_REVIEW\"}",
+      "duration_ms": 0.0,
+      "event_hash": "30565c30cbf3d760555e733a57f09ae7fcfbaba0e0478e4568477be51c438e55"
+    },
+    {
+      "sequence": 18,
+      "event_id": "c8dce9161a8d4ec3b1c1d7163d711032",
+      "timestamp_utc": "2026-11-01T08:17:02.764676Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "30565c30cbf3d760555e733a57f09ae7fcfbaba0e0478e4568477be51c438e55",
+      "metadata_json": "{\"http_status\":200,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/mfa/verify\"}",
+      "duration_ms": 35.03689999342896,
+      "event_hash": "984473e7c0b80c6c983869ccc49d510d8cb16ebc0969c0aaa2280e1b88b59bb0"
+    },
+    {
+      "sequence": 19,
+      "event_id": "0de897dc72914fce858a04555ee1b13a",
+      "timestamp_utc": "2026-11-01T08:17:02.783283Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "984473e7c0b80c6c983869ccc49d510d8cb16ebc0969c0aaa2280e1b88b59bb0",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/submit-review\"}",
+      "duration_ms": 0.0,
+      "event_hash": "faf8767ec267554ac158b102cbba9bb4c781cbe6269f76201a7712e05b587e8b"
+    },
+    {
+      "sequence": 20,
+      "event_id": "ba98715f7dd34a449a7f48ac912fd38e",
+      "timestamp_utc": "2026-11-01T08:17:02.797417Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "maker_checker_required",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "WAITING_APPROVAL",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "faf8767ec267554ac158b102cbba9bb4c781cbe6269f76201a7712e05b587e8b",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"state\":\"AWAITING_CHECKER\"}",
+      "duration_ms": 0.0,
+      "event_hash": "56681a42208b7eb8f6d53d79b0fb9e7a68e158d112dd2cd1538b96705728f950"
+    },
+    {
+      "sequence": 21,
+      "event_id": "760d5e92d38940ef9247e7249969b8bc",
+      "timestamp_utc": "2026-11-01T08:17:02.812772Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "56681a42208b7eb8f6d53d79b0fb9e7a68e158d112dd2cd1538b96705728f950",
+      "metadata_json": "{\"http_status\":200,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/submit-review\"}",
+      "duration_ms": 31.976800004485995,
+      "event_hash": "5c0894f191c861346b644fa66848c8b83278f8ce423ef68a2aa8c25bb8af77ff"
+    },
+    {
+      "sequence": 22,
+      "event_id": "a773fda383c6475ab8136e173db08b8d",
+      "timestamp_utc": "2026-11-01T08:17:02.830101Z",
+      "actor_id": "dev-checker",
+      "actor_role": "supervisor",
+      "session_id": "cee259766ebfb2a372ecfae5bbe19cb2",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "5c0894f191c861346b644fa66848c8b83278f8ce423ef68a2aa8c25bb8af77ff",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/human-review\"}",
+      "duration_ms": 0.0,
+      "event_hash": "ca6f1e0cd1b45699f3d778449b0f9df5c472be8b307862e00ffeff11a5a91444"
+    },
+    {
+      "sequence": 23,
+      "event_id": "a2be881baf6e455e8a81dc881a81f0b1",
+      "timestamp_utc": "2026-11-01T08:17:02.846037Z",
+      "actor_id": "dev-checker",
+      "actor_role": "supervisor",
+      "session_id": "cee259766ebfb2a372ecfae5bbe19cb2",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "human_review_completed",
+      "intent": "Independent simulation request",
+      "permission_level": "RED",
+      "status": "APPROVE",
+      "reason": null,
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "ca6f1e0cd1b45699f3d778449b0f9df5c472be8b307862e00ffeff11a5a91444",
+      "metadata_json": "{\"maker_id\":\"dev-maker\",\"reason\":\"Independent final security audit\",\"state\":\"APPROVED\"}",
+      "duration_ms": 3.0107999918982387,
+      "event_hash": "c400d38ef52483903f192d4e1c2475b4d6b066ee58047473b21cdc86a3f6b449"
+    },
+    {
+      "sequence": 24,
+      "event_id": "6c7581f95fde4bf4b052a12c92441d94",
+      "timestamp_utc": "2026-11-01T08:17:02.860689Z",
+      "actor_id": "dev-checker",
+      "actor_role": "supervisor",
+      "session_id": "cee259766ebfb2a372ecfae5bbe19cb2",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "c400d38ef52483903f192d4e1c2475b4d6b066ee58047473b21cdc86a3f6b449",
+      "metadata_json": "{\"http_status\":200,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/human-review\"}",
+      "duration_ms": 33.07449999556411,
+      "event_hash": "4411c59ee8c6644b1f7b8a3c07747e699681cf0787f1eee6c0e2ea452ca8fd67"
+    },
+    {
+      "sequence": 25,
+      "event_id": "2a4714c25d85401895444e55779d39e7",
+      "timestamp_utc": "2026-11-01T08:17:04.993086Z",
+      "actor_id": "policy-service",
+      "actor_role": "system",
+      "session_id": "policy-activation",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "policy_activated",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "4411c59ee8c6644b1f7b8a3c07747e699681cf0787f1eee6c0e2ea452ca8fd67",
+      "metadata_json": "{\"current\":{\"policy_fingerprint\":\"80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1\",\"policy_generation\":2,\"policy_version\":\"trust-engine-concurrent-next\"},\"previous\":{\"policy_fingerprint\":\"80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1\",\"policy_generation\":1,\"policy_version\":\"trust-engine-3.0\"}}",
+      "duration_ms": 0.0,
+      "event_hash": "147637b1c894ec6397bf39a992b3bb54e745e83b122473d31c49bc17f644d42b"
+    },
+    {
+      "sequence": 26,
+      "event_id": "01299beb5bb547969942cc398209e417",
+      "timestamp_utc": "2026-11-01T08:17:04.994022Z",
+      "actor_id": "policy-service",
+      "actor_role": "system",
+      "session_id": "policy-activation",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "policy_stale",
+      "intent": null,
+      "permission_level": "RED",
+      "status": "REJECTED",
+      "reason": "Policy changed; create a new workflow and obtain fresh authorization",
+      "idempotency_key_hash": null,
+      "request_hash": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "previous_hash": "147637b1c894ec6397bf39a992b3bb54e745e83b122473d31c49bc17f644d42b",
+      "metadata_json": "{\"current_policy\":{\"policy_fingerprint\":\"80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1\",\"policy_generation\":2,\"policy_version\":\"trust-engine-concurrent-next\"},\"old_policy_version\":\"trust-engine-3.0\",\"state\":\"POLICY_STALE\"}",
+      "duration_ms": 0.0,
+      "event_hash": "663f007241c269bff6d4798e09e03a5402038b0760e6bc0134b17a426f5bb5e3"
+    },
+    {
+      "sequence": 27,
+      "event_id": "a0c342c3c50846dd8f0e576c72ebdb50",
+      "timestamp_utc": "2026-11-01T08:17:05.007242Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "663f007241c269bff6d4798e09e03a5402038b0760e6bc0134b17a426f5bb5e3",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/execute\"}",
+      "duration_ms": 0.0,
+      "event_hash": "dff1fe47c36f8b802c554888ee767beac4edacbe7abf69d028afd1a1a4cc1a59"
+    },
+    {
+      "sequence": 28,
+      "event_id": "5f624123e8a9483ea0cf61ca112c5ead",
+      "timestamp_utc": "2026-11-01T08:17:05.028980Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "execution_blocked",
+      "intent": null,
+      "permission_level": "RED",
+      "status": "REJECTED",
+      "reason": "POLICY_STALE: create a new workflow; previous authorizations are invalid",
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "dff1fe47c36f8b802c554888ee767beac4edacbe7abf69d028afd1a1a4cc1a59",
+      "metadata_json": "{}",
+      "duration_ms": 12.856100001954474,
+      "event_hash": "55533c9c3e476714c522f4341f2045a0f142452dab69c26c253f2d13a66fc712"
+    },
+    {
+      "sequence": 29,
+      "event_id": "21b813f37c414b199efb78a951699120",
+      "timestamp_utc": "2026-11-01T08:17:05.039679Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "REJECTED",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "55533c9c3e476714c522f4341f2045a0f142452dab69c26c253f2d13a66fc712",
+      "metadata_json": "{\"http_status\":409,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/execute\"}",
+      "duration_ms": 147.51900000555906,
+      "event_hash": "b20367e27492cfd1cb154bb78d3d6000647bf41125685efad0e002598c95c338"
+    },
+    {
+      "sequence": 30,
+      "event_id": "a32f7cec8d21414e89781efb779c30b0",
+      "timestamp_utc": "2026-11-01T08:17:05.211698Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "b20367e27492cfd1cb154bb78d3d6000647bf41125685efad0e002598c95c338",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/execute\"}",
+      "duration_ms": 0.0,
+      "event_hash": "f755f6550801e33192db4ea5e0de8cf7b2a839557ea3d6327ca376ccbb517036"
+    },
+    {
+      "sequence": 31,
+      "event_id": "41280c22023a4146af22434aa9cdf90c",
+      "timestamp_utc": "2026-11-01T08:17:05.229174Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "execution_blocked",
+      "intent": null,
+      "permission_level": "RED",
+      "status": "REJECTED",
+      "reason": "POLICY_STALE: create a new workflow; previous authorizations are invalid",
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "f755f6550801e33192db4ea5e0de8cf7b2a839557ea3d6327ca376ccbb517036",
+      "metadata_json": "{}",
+      "duration_ms": 11.113500004285015,
+      "event_hash": "2bce3c0246b2c72551be8e81dc8392cf5b38109ac3c2dfc716dfa772c8f07e98"
+    },
+    {
+      "sequence": 32,
+      "event_id": "9f1a9935a0cb4eefa1c3d6b6b89121e3",
+      "timestamp_utc": "2026-11-01T08:17:05.241715Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "REJECTED",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "2bce3c0246b2c72551be8e81dc8392cf5b38109ac3c2dfc716dfa772c8f07e98",
+      "metadata_json": "{\"http_status\":409,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/execute\"}",
+      "duration_ms": 31.033400009619072,
+      "event_hash": "85283cc972c301bd6f22d80a764b4b3fb79e1228fff624a14c7f4b730efe9599"
+    },
+    {
+      "sequence": 33,
+      "event_id": "89f58f67d18c403d950f7fca2e58dcf5",
+      "timestamp_utc": "2026-11-01T08:17:05.261775Z",
+      "actor_id": "dev-checker",
+      "actor_role": "supervisor",
+      "session_id": "cee259766ebfb2a372ecfae5bbe19cb2",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "85283cc972c301bd6f22d80a764b4b3fb79e1228fff624a14c7f4b730efe9599",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/human-review\"}",
+      "duration_ms": 0.0,
+      "event_hash": "82748040f607a3dc7beee619bed1858065dcb618ee1e637b3d93423d29844fda"
+    },
+    {
+      "sequence": 34,
+      "event_id": "bbe745b139a24a37865b2bd30f46f763",
+      "timestamp_utc": "2026-11-01T08:17:05.280432Z",
+      "actor_id": "dev-checker",
+      "actor_role": "supervisor",
+      "session_id": "cee259766ebfb2a372ecfae5bbe19cb2",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "authorization_rejected",
+      "intent": null,
+      "permission_level": "RED",
+      "status": "REJECTED",
+      "reason": "POLICY_STALE: create a new workflow; previous authorizations are invalid",
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "82748040f607a3dc7beee619bed1858065dcb618ee1e637b3d93423d29844fda",
+      "metadata_json": "{}",
+      "duration_ms": 12.546500001917593,
+      "event_hash": "3ac47490b33bafeb616898989bad8e124129ec84a24e3c28bdab8b6d2f8615cc"
+    },
+    {
+      "sequence": 35,
+      "event_id": "c59d208d8427492fb233cb3ccad51939",
+      "timestamp_utc": "2026-11-01T08:17:05.291897Z",
+      "actor_id": "dev-checker",
+      "actor_role": "supervisor",
+      "session_id": "cee259766ebfb2a372ecfae5bbe19cb2",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "REJECTED",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "3ac47490b33bafeb616898989bad8e124129ec84a24e3c28bdab8b6d2f8615cc",
+      "metadata_json": "{\"http_status\":409,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/human-review\"}",
+      "duration_ms": 25.890499993693084,
+      "event_hash": "323d88e62ea5a0ae26ec066c1815c98067695b023ef6da6ba991f49225980787"
+    },
+    {
+      "sequence": 36,
+      "event_id": "74cc2d725ef04e4dbef3f87fd6e5e663",
+      "timestamp_utc": "2026-11-01T08:17:05.304797Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "request_received",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "SUCCESS",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "323d88e62ea5a0ae26ec066c1815c98067695b023ef6da6ba991f49225980787",
+      "metadata_json": "{\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/maker-confirm\"}",
+      "duration_ms": 0.0,
+      "event_hash": "dff0c39625a9dac13165b86a27862d702deaf67f04af6e3e306d391fd0851d2b"
+    },
+    {
+      "sequence": 37,
+      "event_id": "9bd532725fe84ed488cb01ad43cf08cb",
+      "timestamp_utc": "2026-11-01T08:17:05.319834Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051",
+      "task_id": null,
+      "action": "authorization_rejected",
+      "intent": null,
+      "permission_level": "RED",
+      "status": "REJECTED",
+      "reason": "POLICY_STALE: create a new workflow; previous authorizations are invalid",
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "dff0c39625a9dac13165b86a27862d702deaf67f04af6e3e306d391fd0851d2b",
+      "metadata_json": "{}",
+      "duration_ms": 9.684899996500462,
+      "event_hash": "5a333b13224cd057b9b79c419545325164a9c2b0b6786541cad41a31efaa5ac2"
+    },
+    {
+      "sequence": 38,
+      "event_id": "d2fc59593c09434b9fe2cd5f0c46cee7",
+      "timestamp_utc": "2026-11-01T08:17:05.329421Z",
+      "actor_id": "dev-maker",
+      "actor_role": "customer",
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "workflow_id": null,
+      "task_id": null,
+      "action": "api_request_completed",
+      "intent": null,
+      "permission_level": "GREEN",
+      "status": "REJECTED",
+      "reason": null,
+      "idempotency_key_hash": null,
+      "request_hash": null,
+      "previous_hash": "5a333b13224cd057b9b79c419545325164a9c2b0b6786541cad41a31efaa5ac2",
+      "metadata_json": "{\"http_status\":409,\"path\":\"/api/workflows/51eae0cf62e24bef9b3267c3db7ae051/maker-confirm\"}",
+      "duration_ms": 26.91899999626912,
+      "event_hash": "5583b489ff0a176d56361fd8d641ade9cde37ff3d5400962165b71bbda5069d4"
+    }
+  ],
+  "ledger_entries": [],
+  "accounts": [
+    {
+      "actor_id": "dev-maker",
+      "balance_cents": 200000000,
+      "reserved_cents": 600000
+    }
+  ],
+  "workflows": [
+    {
+      "action": "transfer.simulate",
+      "action_type": "transfer.simulate",
+      "actor_id": "dev-maker",
+      "amount_cents": 5000100,
+      "approved_at": null,
+      "approved_authorization_digest": null,
+      "approved_hash": null,
+      "approved_plan_hash": null,
+      "approved_policy_fingerprint": null,
+      "approved_policy_version": null,
+      "authorization_digest": "8dccfa1d29f09118d715c96fff8e7d6d3f62590c85d88fd4de33155525ce523c",
+      "checker_id": null,
+      "checker_role": "supervisor",
+      "created_at": "2026-11-01T08:17:02.649034Z",
+      "edges": [
+        {
+          "source": "N01",
+          "target": "N02"
+        }
+      ],
+      "idempotency_key": "a10cf75d-2863-47c5-a396-05ecd66a1a17",
+      "idempotency_key_hash": "98e867a2c8b97c9df703834e43c48e5419b6f73092ccc9d054a02e549e0ec075",
+      "intent": "Independent simulation request",
+      "maker_authorization_digest": null,
+      "maker_confirmed": false,
+      "maker_confirmed_at": "2026-11-01T08:17:02.699635Z",
+      "maker_confirmed_by": "dev-maker",
+      "maker_id": "dev-maker",
+      "mfa_authorization_digest": null,
+      "mfa_expires_at": 1793521322.7476828,
+      "mfa_verified": false,
+      "mfa_verified_at": 1793521022.7476826,
+      "mfa_verified_by": "dev-maker",
+      "nodes": [
+        {
+          "dependencies": [],
+          "task_id": "N01"
+        },
+        {
+          "dependencies": [
+            "N01"
+          ],
+          "task_id": "N02"
+        }
+      ],
+      "permission_level": "RED",
+      "plan_confirmed": false,
+      "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+      "policy_fingerprint": "80515ee7029f88017bd278ea651635b55f942fb43203a9fc33b0b1920ec0c5c1",
+      "policy_generation": 1,
+      "policy_stale_at": "2026-11-01T08:17:04.993678Z",
+      "policy_version": "trust-engine-3.0",
+      "recipient": "demo-recipient",
+      "review_reason": "Independent final security audit",
+      "reviewed_at": "2026-11-01T08:17:02.845658Z",
+      "risk_flags": [],
+      "sandbox": {
+        "plan_hash": "296eebda6ea94f09a5652d802dc2d3a05e2e1094e8b896f869438155cde5e2ca",
+        "risk_level": "HIGH",
+        "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+        "sandbox_status": "passed",
+        "validated_at": "2026-11-01T08:17:02.649596Z",
+        "validation_results": [
+          {
+            "check": "unique_nodes",
+            "passed": true
+          },
+          {
+            "check": "dependencies_exist",
+            "passed": true
+          },
+          {
+            "check": "acyclic",
+            "passed": true
+          },
+          {
+            "check": "action_allowlist",
+            "passed": true
+          },
+          {
+            "check": "recipient_allowlist",
+            "passed": true
+          },
+          {
+            "check": "amount",
+            "passed": true
+          },
+          {
+            "check": "balance_and_reserves",
+            "passed": true
+          },
+          {
+            "check": "permission",
+            "passed": true
+          },
+          {
+            "check": "risk_rules",
+            "passed": true
+          },
+          {
+            "check": "bound_plan",
+            "passed": true
+          }
+        ]
+      },
+      "sandbox_result_hash": "31cc8f83802d50e254f4f1554196c463f25c70a564adc5874d984d67acd3aaf5",
+      "sandbox_run_id": "1392b70e2ed543ff8a20cc3333655fbe",
+      "sandbox_valid": false,
+      "session_id": "9440b48503ea9f3ab24ca387e5cafe15",
+      "state": "POLICY_STALE",
+      "task_id": null,
+      "transaction_amount": 5000100,
+      "workflow_id": "51eae0cf62e24bef9b3267c3db7ae051"
+    }
+  ],
+  "chain_tip": "5583b489ff0a176d56361fd8d641ade9cde37ff3d5400962165b71bbda5069d4"
+}

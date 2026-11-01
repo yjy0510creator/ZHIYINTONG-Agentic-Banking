@@ -1,0 +1,346 @@
+[
+  {
+    "path": "backend/agent_runtime.py",
+    "sha256": "bff29e05ba0c3f75e6b06ba574ffde3a77e33169133edc95b53a8167d9f911ca"
+  },
+  {
+    "path": "backend/initialize_database.py",
+    "sha256": "c735bd3096417a139c85df0bc261a1253e7bd86863a9026ffdc11fc16e00ea1e"
+  },
+  {
+    "path": "backend/main.py",
+    "sha256": "0ba3d6c5d2f0d1a4848c87cf8ba09d9b9837b620eb47b30b30408446805e4080"
+  },
+  {
+    "path": "backend/mcp_server.py",
+    "sha256": "6bf0844fd4d7d7574ade7d71b0efc8112521d44774beedb6bd9010cbb1aae747"
+  },
+  {
+    "path": "backend/requirements-agentic-addon.txt",
+    "sha256": "283353a90f1fa4ef4df5925efefca7575b2f7ce0723cf653d3ce78f900e6ec56"
+  },
+  {
+    "path": "backend/requirements-dev.txt",
+    "sha256": "2ff49973a5ea76671c767b27acfd7d111795e09db8333ae9e07e76a997ca99ae"
+  },
+  {
+    "path": "backend/requirements.txt",
+    "sha256": "be8e124f1b92bdfd5fa920b7bab23aed4760f93612544c3ea8229a41b418fad4"
+  },
+  {
+    "path": "backend/services/api_v3.py",
+    "sha256": "ce81cd4c4ab73e9ced5961022d12033a6852f74dbfd92c8ed498acfb6daf24a4"
+  },
+  {
+    "path": "backend/services/audit_service.py",
+    "sha256": "d170d521dbf1b2f782fb297f54ba5688559a43f974e4374a75677db59b6fc7d1"
+  },
+  {
+    "path": "backend/services/auth_service.py",
+    "sha256": "c15b5ea354e11e4e0dad8988a2cc5ceddb4cac615fe3f373cf749b1dc63e08e4"
+  },
+  {
+    "path": "backend/services/database.py",
+    "sha256": "17603d5ffed350347b9e5caecf1369c55564affec2c16ae299d40d9c504b2e2d"
+  },
+  {
+    "path": "backend/services/execution_gateway.py",
+    "sha256": "0071e8c5731405eb3193e1f647f0c5accb2194218267b6a3b0eff25e6e0e5e64"
+  },
+  {
+    "path": "backend/services/idempotency_service.py",
+    "sha256": "6a90ec0d8fbb0b7341ff462253c29c45ccc8174b25aba8da875e360aa3f0ea95"
+  },
+  {
+    "path": "backend/services/intelligence.py",
+    "sha256": "2aaae20aa9acde0e4c00d68c0a454c6478384fbdd622139b976eb416b45aac7d"
+  },
+  {
+    "path": "backend/services/policy_service.py",
+    "sha256": "af56ee9881dd159b527de0160cf7e0ae3aca911ac2113e193b258879a8e050db"
+  },
+  {
+    "path": "backend/services/sandbox_service.py",
+    "sha256": "315f2a63ec37c284dedcc81dcb0f5a77ca22912320525e55ca72d536f4750f1c"
+  },
+  {
+    "path": "backend/services/__init__.py",
+    "sha256": "7b97d05a85c53d60d237e8a78855d350d3aa7c798804b8fb99ea08f60934aa51"
+  },
+  {
+    "path": "backend/tests/test_banking_v3.py",
+    "sha256": "07cefd8ac0b302f0951352729bc60ddc9d35a51721a6f9caf2f4dc44cf3a57c4"
+  },
+  {
+    "path": "backend/tests/test_final_security_audit.py",
+    "sha256": "d64c781b4452e2ef74ddb63aa12332959a140de70067a04d3ba408a2866b359c"
+  },
+  {
+    "path": "backend/tests/test_intelligence.py",
+    "sha256": "eb23b31bacf80df9fa34a3f228cc96d7bb2a2f08a3b0ca85de4c95f17952ff31"
+  },
+  {
+    "path": "backend/tests/test_policy_binding_v31.py",
+    "sha256": "8a7cba97a72bad2ef2c5376cfbb88f50ea70496cd4714dc753706f2cc414cf2e"
+  },
+  {
+    "path": "backend/tests/test_security_acceptance.py",
+    "sha256": "673402522f53472934cf76c0551e6c62f6fc3f755e303c36bf10e9f254febee2"
+  },
+  {
+    "path": "frontend/globals.css",
+    "sha256": "88ed9cc32e6436b777b641bb4521f42fc26ec2e80027dd51751fa4eefbe83133"
+  },
+  {
+    "path": "frontend/jsconfig.json",
+    "sha256": "826f6521caeafca378e190335ce3b29b51ac66234f51d50776733fea79825bba"
+  },
+  {
+    "path": "frontend/next.config.js",
+    "sha256": "edcdd5b1a687d77f4ee9d94d21126d5143dd577560d3d9893092bdea9f497f90"
+  },
+  {
+    "path": "frontend/package-lock.json",
+    "sha256": "d89f643febde5aa176536c3b613a23af7ce2c429092491649dbdebf7d5f3dbbe"
+  },
+  {
+    "path": "frontend/package.json",
+    "sha256": "0fac945d793665103af6824bd15265d9b32cb9b7652a25cbf845782139f986b3"
+  },
+  {
+    "path": "frontend/postcss.config.js",
+    "sha256": "fa650b380adfabb151a0b352f7135e107e6352345f899060f1c5c231228f94bf"
+  },
+  {
+    "path": "frontend/tailwind.config.js",
+    "sha256": "36d001debab533519053437653349a3c0a99bf27ef6f1c665298a96c90739f3e"
+  },
+  {
+    "path": "frontend/components/AuditConsole.jsx",
+    "sha256": "08a55c7076d16395dbe8db12b0789108d5fec9540c7a881af88c9150f57448e5"
+  },
+  {
+    "path": "frontend/components/bankingClient.js",
+    "sha256": "3709b80a0748a22bd65c75a3a0346d2dc79a5bc5e93882180768b318fa2cc233"
+  },
+  {
+    "path": "frontend/components/CheckerApprovalModal.jsx",
+    "sha256": "c1c2a6f703bd1fde881212f9f9d860e9bea6ff40fcaf38be5623b5c75831bff7"
+  },
+  {
+    "path": "frontend/components/DevelopmentLogin.jsx",
+    "sha256": "64d77cd42a2b7c26f082028361dc9b699dcd64e9260a89d4b12e10d49dce3a30"
+  },
+  {
+    "path": "frontend/components/GeneratedBusinessCard.jsx",
+    "sha256": "ec1d0b6a5fc5e4b088958513e04c4353fc0b8424a1171d801d975912db042509"
+  },
+  {
+    "path": "frontend/components/GeneratedBusinessCard.module.css",
+    "sha256": "0be888d92a6434863f84137e3b847094bfb065cebed1abeafa6413badadb829c"
+  },
+  {
+    "path": "frontend/components/IntelligencePanels.jsx",
+    "sha256": "7490536d987a5cefaace8932a491e8d987e958afc510b5765f822c3066c36266"
+  },
+  {
+    "path": "frontend/components/IntelligencePanels.module.css",
+    "sha256": "28a3b67e0ddd25af024625e27374f7b7320054332c178a2d4ee716b7f85ad35a"
+  },
+  {
+    "path": "frontend/components/SpiritCompanionDock.jsx",
+    "sha256": "0fa8ece7f48efd6f22deed4e04d967199f206ca41ffcb85ad5cb1f67bf534aed"
+  },
+  {
+    "path": "frontend/components/SpiritCompanionDock.module.css",
+    "sha256": "d1b7efb0a803e237d63a58cc7ce5f0f20502bb622309bf92f843a15bb5283310"
+  },
+  {
+    "path": "frontend/components/SpiritCompanions.module.css",
+    "sha256": "88da600a55a88ca273da713080bc01b92e69837ea0bd9557d6fa8b76c922a0a1"
+  },
+  {
+    "path": "frontend/pages/index.js",
+    "sha256": "020f1969a92c64d820cccaa871735c572bd9146b6bcd172c5e31539294100b4e"
+  },
+  {
+    "path": "frontend/pages/index.js.backup",
+    "sha256": "0b8207f6aad1603bc72fef445993e4465fc7993ee549dc0beda81b149a8e7a6d"
+  },
+  {
+    "path": "frontend/pages/index.js.backup_20261101_131535",
+    "sha256": "31d9326141e482248c0d18c7bed7880fa55e954c4c48b5002109e764385cbb32"
+  },
+  {
+    "path": "frontend/pages/index.js.before-animated",
+    "sha256": "0b8207f6aad1603bc72fef445993e4465fc7993ee549dc0beda81b149a8e7a6d"
+  },
+  {
+    "path": "frontend/pages/index.js.before-spirit-panel_20261101_115827",
+    "sha256": "147a01136e8baedce533d55eeb6cfe7ed2340b7c452e7636011cf9e7dbd0e611"
+  },
+  {
+    "path": "frontend/pages/zhiyintong_index_animated.js",
+    "sha256": "e2575420afac76c4e6598cd2c0209a8152220d41e0ed96a501fa58f20b67a70b"
+  },
+  {
+    "path": "frontend/pages/_app.js",
+    "sha256": "f43f526823bda5ed5642137b7cdf7e17e9cf2f81320998da4fefb46d8329afa6"
+  },
+  {
+    "path": "frontend/public/boy-new.png",
+    "sha256": "57022017084090ff17ac51ca89fa3f685a86745a431de41ee342f1c6f29070be"
+  },
+  {
+    "path": "frontend/public/concierge-girl.jpg",
+    "sha256": "63505bff31e8298479d205697e1254c17d02d4eea0f17c64ece64e3303a21bca"
+  },
+  {
+    "path": "frontend/public/girl-new.png",
+    "sha256": "e06f98f1803f13c2916ba386bc88a033361ebc98e873bb80d3187593a5c5784c"
+  },
+  {
+    "path": "frontend/public/spirit-girl.png",
+    "sha256": "64906deda126371b041cf37a18a959dde1d5208a063126648656e8431d46660a"
+  },
+  {
+    "path": "frontend/public/spirit-guardian.png",
+    "sha256": "548c55e5ac72d8d509d80210bb9d4792cc30f71ba533342f5663c036a1419759"
+  },
+  {
+    "path": "frontend/tests/test-card-fallback.cjs",
+    "sha256": "57a29a8e0cc5ad89fd11261e307bd7b55d256e07000b8a6c9a222dead25bdac5"
+  },
+  {
+    "path": "backend/.env.example",
+    "sha256": "fc3a600aa51c5715c03f71b08eca4aca8481e964a171d0b75c4047be0bf4d1b8"
+  },
+  {
+    "path": "evidence/full/v31-acceptance.xml",
+    "sha256": "c8819820dea7aa87d01d9bd5b68336572f0791ecd2fe6df9d6070ab11131228c"
+  },
+  {
+    "path": "evidence/regression-43/regression43.xml",
+    "sha256": "7605211ceec2e8e1552e4da92634597dbe23b9a7cf438922c2f64e63091619b3"
+  },
+  {
+    "path": "evidence/regression-55/regression55.xml",
+    "sha256": "a2ed679fc5a2e24897e09fcf51d89593159dbb6546159c7ce076f105345d843f"
+  },
+  {
+    "path": "evidence/regression-70/regression70.xml",
+    "sha256": "08c58863e61e7208e9a5b34a3b6a6e5f7cd0403e413e444b9f9fb165d20247fd"
+  },
+  {
+    "path": "evidence/results.json",
+    "sha256": "93216419243d7853eb2c101b4c121370056c87b010b065ad966cd37c9e3dbe4c"
+  },
+  {
+    "path": "evidence/frontend-build-output.txt",
+    "sha256": "795ca7d8c460667eef6262e837912b921fcebf28aefb608e0652027f8ef29acb"
+  },
+  {
+    "path": "evidence/full/v31-pip-check.txt",
+    "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+  },
+  {
+    "path": "evidence/policy-http/test_audit_failure_rolls_back_every_effect.json",
+    "sha256": "b532c0aa7b515e3f3b5f474d1a9c4cc0be7a4db4a6d4fd2dfb585b337b85021c"
+  },
+  {
+    "path": "evidence/policy-http/test_audit_failure_rolls_back_every_effect_api_request_completed.json",
+    "sha256": "eb12814c9a25c2f0d6b10ab781c3b4d7642ed8b90bd8baa70e372aa5551924b2"
+  },
+  {
+    "path": "evidence/policy-http/test_audit_failure_rolls_back_every_effect_execution_completed.json",
+    "sha256": "172ce4242037b3e120afc8b088b79abdd7de7e9654b435c616276fe1872ee892"
+  },
+  {
+    "path": "evidence/policy-http/test_checker_different_transaction.json",
+    "sha256": "94a16513a281ffb3db8cbf4db17b2b394af26e2a1d3614fc9d1d254ea4f1b9dd"
+  },
+  {
+    "path": "evidence/policy-http/test_concurrent_activation_wins_lock.json",
+    "sha256": "17113915a9d0c8cc7d71912c5f8a946344c199b6b9f15cbdbcc339003a1a11a0"
+  },
+  {
+    "path": "evidence/policy-http/test_dormant_old_worker_cannot_reactivate_old_policy.json",
+    "sha256": "cdfb9196eea9996a336ca185e8ab21b4ec60d772653f3e9cc1aa32fe457e903c"
+  },
+  {
+    "path": "evidence/policy-http/test_expired_mfa.json",
+    "sha256": "e648c0eb74b2ad8524d996a46bcfebedf8862dc0c0d88087259e5acfa2bbb0cd"
+  },
+  {
+    "path": "evidence/policy-http/test_fingerprint_change_same_version.json",
+    "sha256": "cdd159017842d4b3b9c664c11ab115013082bf46ab21cf6c6156c9005bfa5e22"
+  },
+  {
+    "path": "evidence/policy-http/test_maker_self_approval.json",
+    "sha256": "5406e21496f2ecfe7bc9095af8c4d8433b95bc7d9d8af5080df16e8622ff1968"
+  },
+  {
+    "path": "evidence/policy-http/test_normal_authorization_snapshot.json",
+    "sha256": "7902c53e955a09b02771f967c71f272f070283f6124cf459f46310e699aa2223"
+  },
+  {
+    "path": "evidence/policy-http/test_old_approval_digest.json",
+    "sha256": "d09dbb799ee16f1ddc7eda70eba0fef741e9361c8f5eeca2da07f5581a598293"
+  },
+  {
+    "path": "evidence/policy-http/test_old_idempotency_key_after_policy_change.json",
+    "sha256": "9ada0a5bc90b094934028e04756f0d59b051d0f636be4f24628d4b771e3a9213"
+  },
+  {
+    "path": "evidence/policy-http/test_parallel_execution_once.json",
+    "sha256": "8d42e81af5b80bf7efdf70e58f8f2305b16386ba087b2c4764c08b8ab3316455"
+  },
+  {
+    "path": "evidence/policy-http/test_policy_change_at_each_stage_checker.json",
+    "sha256": "b8544ea8bad32330efa2828e4bcfd39f7eb210524bc3d7828f74cfbb9f60910b"
+  },
+  {
+    "path": "evidence/policy-http/test_policy_change_at_each_stage_created.json",
+    "sha256": "d26dda6f61b92fc90d147a90e6368d551256874e35c126adbe28b7bdeca9397f"
+  },
+  {
+    "path": "evidence/policy-http/test_policy_change_at_each_stage_maker.json",
+    "sha256": "06a53f4604a7b8bb98f6bcd518c5be8c737d56b54a7934d4f7e66bac57f9e834"
+  },
+  {
+    "path": "evidence/policy-http/test_policy_change_at_each_stage_mfa.json",
+    "sha256": "31a14c9c1154b8a15cfe7d81d77f71dc01e78aa58a51fbc513fdf3beafaf1c95"
+  },
+  {
+    "path": "evidence/policy-http/test_read_only_request_does_not_activate_policy.json",
+    "sha256": "5826d2448705659b9a9c9e0352e68220efb06c86cf166e5c0fdc3a421d0658c1"
+  },
+  {
+    "path": "evidence/policy-http/test_sandbox_mismatch.json",
+    "sha256": "ed022b9c6fb06ac13be20690ac809a8cd05e0f63a5dd4c5dacae4f03fca5052a"
+  },
+  {
+    "path": "evidence/policy-http/test_snapshot_append_only_and_client_override.json",
+    "sha256": "7d7afdb06000d914e936b9e816601e2ba85e0fcff3a49b5d5154b81ed311953b"
+  },
+  {
+    "path": "evidence/policy-http/test_stale_cannot_restore_after_version_revert.json",
+    "sha256": "61dedbbd118f7e484d977fee8b46dbd04ea609174d690ebe8490353e8eee0244"
+  },
+  {
+    "path": "evidence/reports/FINAL_SECURITY_ACCEPTANCE_V3_1.md",
+    "sha256": "a33a8f6c37d85b6cd0e8e35db18e4ee902374036de17402204117fa4c91d962e"
+  },
+  {
+    "path": "evidence/reports/POLICY_VERSION_BINDING_AUDIT.md",
+    "sha256": "7e72ffde5bed98dc0a4257661bf7e42da1564ace66ee41c2184bcec675af6228"
+  },
+  {
+    "path": "evidence/reports/NEGATIVE_SECURITY_TEST_REPORT.md",
+    "sha256": "0f467e0cc7894c275fd81ea80e5b0f3b76799d0cf3f166c173a16f017bb10373"
+  },
+  {
+    "path": "evidence/reports/MAKER_CHECKER_AUDIT_REPORT.md",
+    "sha256": "32be42eb22713b26638c13cdf0cd63efb1b89be4a32b6a7d7c9b0a02097de6cd"
+  }
+]

@@ -1,0 +1,31 @@
+
+> zhiyintong-frontend@1.0.0 build
+> next build
+
+   ▲ Next.js 15.5.28
+
+   Linting and checking validity of types ...
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 6.7s
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (pages)                                Size  First Load JS
+┌ ○ /                                       180 B         530 kB
+├   /_app                                     0 B        94.4 kB
+├ ○ /404                                  2.28 kB        96.7 kB
+└ ○ /zhiyintong_index_animated              251 B         530 kB
++ First Load JS shared by all              108 kB
+  ├ chunks/framework-a0d672a1738f3e29.js  57.5 kB
+  ├ chunks/main-2896cddd0b0bd6c1.js       34.9 kB
+  ├ css/12987490d8690bf8.css              13.2 kB
+  └ other shared chunks (total)           2.04 kB
+
+○  (Static)  prerendered as static content
+

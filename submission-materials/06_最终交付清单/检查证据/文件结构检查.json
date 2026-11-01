@@ -1,0 +1,42 @@
+{
+  "pdfs": [
+    {
+      "file": "01_技术文档/ZHIYINTONG_V3.1_技术文档.pdf",
+      "pages": 12,
+      "bytes": 1022223
+    },
+    {
+      "file": "02_答辩材料/ZHIYINTONG_10分钟答辩演讲稿.pdf",
+      "pages": 8,
+      "bytes": 490603
+    },
+    {
+      "file": "02_答辩材料/ZHIYINTONG_V3.1_答辩PPT.pdf",
+      "pages": 16,
+      "bytes": 500734
+    },
+    {
+      "file": "04_安全自评报告/ZHIYINTONG_V3.1_金融安全自评报告.pdf",
+      "pages": 8,
+      "bytes": 549606
+    },
+    {
+      "file": "05_演示视频/ZHIYINTONG_V3.1_演示视频分镜旁白与录制指南.pdf",
+      "pages": 4,
+      "bytes": 375990
+    }
+  ],
+  "pptx_slide_count": 16,
+  "pptx_native_open_and_pdf_export": "PASS",
+  "pptx_sha256": "3ef530fe0e7463fc0245e466b2391ee3c54676f8563d92d35953ad9b71564142",
+  "source_zip_bytes": 5847021,
+  "source_zip_files": 102,
+  "core_source_unchanged": true,
+  "full_extracted_source_tests": {
+    "passed": 90,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 241.27
+  }
+}
